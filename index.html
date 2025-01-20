@@ -5,64 +5,137 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Riskiyan Benta Yudistira</title>
     <style>
-      body {
-        font-family: Arial, sans-serif;
+      * {
         margin: 0;
         padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: 'Arial', sans-serif;
         background: linear-gradient(135deg, #141e30, #243b55);
         color: #fff;
         text-align: center;
+        padding: 0;
+        overflow-x: hidden;
       }
+
       header {
-        padding: 20px;
         background: rgba(0, 0, 0, 0.6);
+        padding: 50px 20px;
         border-bottom: 2px solid #00c6ff;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
       }
+
       header h1 {
-        font-size: 2.5em;
-        margin: 10px 0;
+        font-size: 3em;
+        font-weight: 700;
+        margin-bottom: 10px;
       }
+
       header p {
-        font-size: 1.2em;
-        font-style: italic;
+        font-size: 1.4em;
         color: #00c6ff;
+        font-style: italic;
       }
+
       .about {
         margin: 40px auto;
-        padding: 20px;
-        max-width: 800px;
+        padding: 30px;
+        max-width: 900px;
         background: rgba(255, 255, 255, 0.1);
         border-radius: 10px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        animation: fadeIn 1s ease-out;
       }
+
       .about h2 {
-        font-size: 2em;
+        font-size: 2.5em;
         color: #00c6ff;
+        margin-bottom: 20px;
       }
+
       .about img {
-        width: 150px;
-        height: 150px;
+        width: 180px;
+        height: 180px;
         border-radius: 50%;
-        border: 3px solid #00c6ff;
-        margin: 20px 0;
+        border: 5px solid #00c6ff;
+        margin-bottom: 20px;
       }
+
       .about p {
         font-size: 1.2em;
-        line-height: 1.6;
+        line-height: 1.8;
         color: #dcdcdc;
+        margin-bottom: 30px;
       }
+
       .favorite-song {
         margin-top: 30px;
+        background: rgba(0, 0, 0, 0.7);
+        padding: 20px;
+        border-radius: 10px;
       }
+
+      .favorite-song h3 {
+        font-size: 2em;
+        color: #00c6ff;
+        margin-bottom: 15px;
+      }
+
       .favorite-song audio {
-        margin-top: 20px;
+        width: 100%;
+        border-radius: 5px;
+        margin-top: 15px;
       }
+
+      .social-links {
+        margin-top: 50px;
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        animation: fadeIn 2s ease-out;
+      }
+
+      .social-links a {
+        display: block;
+        width: 50px;
+        height: 50px;
+        background: #00c6ff;
+        border-radius: 50%;
+        padding: 12px;
+        transition: all 0.3s ease;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+      }
+
+      .social-links a:hover {
+        transform: scale(1.1);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+      }
+
+      .social-links img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
       footer {
-        margin-top: 40px;
-        padding: 10px;
+        margin-top: 50px;
+        padding: 20px;
         background: rgba(0, 0, 0, 0.8);
-        font-size: 0.9em;
         color: #999;
+        font-size: 1em;
+      }
+
+      @keyframes fadeIn {
+        0% {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0);
+        }
       }
     </style>
   </head>
@@ -74,16 +147,44 @@
     <section class="about">
       <h2>About Me</h2>
       <img src="https://files.catbox.moe/k68d72.jpg" alt="Yudis" />
-      <p>Halo! Nama saya Riskiyan Benta Yudistira, biasa dipanggil Yudis. Saya sangat menyukai teknologi, khususnya pengembangan website dan bot. Hobi saya adalah mendengarkan musik dan mengeksplorasi hal-hal baru yang menarik.</p>
+      <p>
+        Halo, saya Riskiyan Benta Yudistira, biasa dipanggil Yudis. Saya sangat
+        menyukai teknologi, khususnya pengembangan website dan bot. Hobi saya adalah
+        mendengarkan musik dan mengeksplorasi hal-hal baru yang menarik. Saya juga suka
+        berbagi pengetahuan dan membuat hal-hal kreatif.
+      </p>
       <div class="favorite-song">
         <h3>Lagu Favorit Saya:</h3>
         <p><strong>Nina - Feast</strong></p>
         <audio controls>
-          <source src="https://files.catbox.moe/j4aq54.mp3" type="audio/mpeg" />
+          <source
+            src="https://files.catbox.moe/j4aq54.mp3"
+            type="audio/mpeg"
+          />
           Browser Anda tidak mendukung pemutar audio.
         </audio>
       </div>
     </section>
+    <div class="social-links">
+      <a href="https://www.tiktok.com/@jktabc" target="_blank">
+        <img
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/64/TikTok_logo_2021.svg/1200px-TikTok_logo_2021.svg.png"
+          alt="TikTok"
+        />
+      </a>
+      <a href="https://www.instagram.com/yudis_299/" target="_blank">
+        <img
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Instagram_logo_2022.svg/1200px-Instagram_logo_2022.svg.png"
+          alt="Instagram"
+        />
+      </a>
+      <a href="https://wa.me/6282143985744" target="_blank">
+        <img
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/WhatsApp.svg/1200px-WhatsApp.svg.png"
+          alt="WhatsApp"
+        />
+      </a>
+    </div>
     <footer>
       <p>© 2025 Riskiyan Benta Yudistira | Dibuat dengan hati.</p>
     </footer>
