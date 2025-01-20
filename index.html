@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Riskiyan Benta Yudistira</title>
+    <title>Profile with Music</title>
     <style>
       * {
         margin: 0;
@@ -20,61 +20,53 @@
         overflow-x: hidden;
       }
 
-      header {
-        background: rgba(0, 0, 0, 0.6);
-        padding: 70px 20px;
-        border-bottom: 3px solid #00c6ff;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
-        margin-bottom: 40px;
-      }
-
-      .about {
-        margin: 40px auto;
-        padding: 40px;
+      .profile {
+        margin: 50px auto;
+        padding: 30px;
         max-width: 900px;
         background: rgba(255, 255, 255, 0.1);
         border-radius: 10px;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-        animation: fadeIn 1s ease-out;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        animation: fadeIn 1s ease-out 1s forwards;
       }
 
-      .about h2 {
-        font-size: 2.5em;
-        color: #00c6ff;
-        margin-bottom: 20px;
-        text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-      }
-
-      .about img {
+      .profile img {
         width: 180px;
         height: 180px;
         border-radius: 50%;
         border: 5px solid #00c6ff;
         margin-bottom: 20px;
-        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
       }
 
-      .about p {
+      .profile p {
         font-size: 1.2em;
         line-height: 1.8;
         color: #dcdcdc;
         margin-bottom: 30px;
       }
 
-      .music-list {
+      .favorite-song {
         margin-top: 30px;
+        background: rgba(0, 0, 0, 0.7);
+        padding: 20px;
+        border-radius: 10px;
       }
 
-      .music-list h3 {
-        font-size: 2.5em;
+      .favorite-song h3 {
+        font-size: 2em;
         color: #00c6ff;
         margin-bottom: 15px;
       }
 
-      .music-list p {
+      .favorite-song p {
         font-size: 1.2em;
-        margin: 15px 0;
-        color: #dcdcdc;
+        margin-bottom: 10px;
+      }
+
+      .favorite-song audio {
+        width: 100%;
+        border-radius: 5px;
+        margin-top: 15px;
       }
 
       .social-links {
@@ -108,11 +100,14 @@
       }
 
       footer {
-        margin-top: 50px;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
         padding: 20px;
         background: rgba(0, 0, 0, 0.8);
         color: #999;
         font-size: 1em;
+        text-align: center;
       }
 
       @keyframes fadeIn {
@@ -125,39 +120,67 @@
           transform: translateY(0);
         }
       }
+
+      @keyframes laserEffect {
+        0% {
+          width: 0;
+          height: 0;
+          border-radius: 50%;
+          top: 50%;
+          left: 50%;
+        }
+        50% {
+          width: 150px;
+          height: 150px;
+          border-radius: 50%;
+          top: 30%;
+          left: 30%;
+        }
+        100% {
+          width: 0;
+          height: 0;
+          border-radius: 50%;
+          top: 50%;
+          left: 50%;
+        }
+      }
+
+      .laser {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 0;
+        height: 0;
+        background: rgba(0, 204, 255, 0.8);
+        animation: laserEffect 2s ease-out forwards;
+      }
     </style>
   </head>
   <body>
-    <section class="about">
-      <h2>About Me</h2>
-      <img src="https://img102.pixhost.to/images/114/557025919_tenrai-bot.jpg" alt="Yudis" />
+    <div class="laser"></div> <!-- Laser animation -->
+
+    <section class="profile">
+      <img
+        src="https://img102.pixhost.to/images/114/557025919_tenrai-bot.jpg"
+        alt="Profile"
+      />
       <p>
         Halo, saya Riskiyan Benta Yudistira, biasa dipanggil Yudis. Saya sangat
         menyukai teknologi, khususnya pengembangan website dan bot. Hobi saya adalah
         mendengarkan musik dan mengeksplorasi hal-hal baru yang menarik. Saya juga suka
         berbagi pengetahuan dan membuat hal-hal kreatif.
       </p>
-    </section>
-
-    <section class="music-list">
-      <h3>Favorite Songs</h3>
-      <p><strong>Nina Feast - Tokyo</strong></p>
-      <audio controls>
-        <source
-          src="https://files.catbox.moe/j4aq54.mp3"
-          type="audio/mpeg"
-        />
-        Browser Anda tidak mendukung pemutar audio.
-      </audio>
-
-      <p><strong>Hindia - Secukupnya</strong></p>
-      <audio controls>
-        <source
-          src="https://files.catbox.moe/2nco0t.m4a"
-          type="audio/mpeg"
-        />
-        Browser Anda tidak mendukung pemutar audio.
-      </audio>
+      <div class="favorite-song">
+        <h3>Lagu Favorit Saya:</h3>
+        <p><strong>Nina - Feast</strong></p>
+        <audio controls>
+          <source
+            src="https://files.catbox.moe/j4aq54.mp3"
+            type="audio/mpeg"
+          />
+          Browser Anda tidak mendukung pemutar audio.
+        </audio>
+      </div>
     </section>
 
     <div class="social-links">
@@ -174,6 +197,7 @@
         />
       </a>
     </div>
+
     <footer>
       <p>© 2025 Riskiyan Benta Yudistira | Dibuat dengan hati.</p>
     </footer>
