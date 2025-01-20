@@ -40,29 +40,13 @@
       }
 
       .about {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-between;
         margin: 40px auto;
-        padding: 20px;
-        max-width: 1200px;
+        padding: 30px;
+        max-width: 900px;
         background: rgba(255, 255, 255, 0.1);
         border-radius: 10px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-      }
-
-      .about img {
-        width: 250px;
-        height: 250px;
-        border-radius: 50%;
-        border: 3px solid #00c6ff;
-        margin-right: 40px;
-      }
-
-      .about-text {
-        max-width: 60%;
-        text-align: left;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        animation: fadeIn 1s ease-out;
       }
 
       .about h2 {
@@ -71,25 +55,87 @@
         margin-bottom: 20px;
       }
 
-      .about p {
-        font-size: 1.2em;
-        line-height: 1.6;
-        color: #dcdcdc;
+      .about img {
+        width: 180px;
+        height: 180px;
+        border-radius: 50%;
+        border: 5px solid #00c6ff;
         margin-bottom: 20px;
       }
 
-      .about a {
+      .about p {
+        font-size: 1.2em;
+        line-height: 1.8;
+        color: #dcdcdc;
+        margin-bottom: 30px;
+      }
+
+      .favorite-song {
+        margin-top: 30px;
+        background: rgba(0, 0, 0, 0.7);
+        padding: 20px;
+        border-radius: 10px;
+      }
+
+      .favorite-song h3 {
+        font-size: 2em;
         color: #00c6ff;
-        text-decoration: none;
-        font-weight: bold;
+        margin-bottom: 15px;
+      }
+
+      .favorite-song audio {
+        width: 100%;
+        border-radius: 5px;
+        margin-top: 15px;
+      }
+
+      .social-links {
+        margin-top: 50px;
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        animation: fadeIn 2s ease-out;
+      }
+
+      .social-links a {
+        display: block;
+        width: 50px;
+        height: 50px;
+        background: #00c6ff;
+        border-radius: 50%;
+        padding: 12px;
+        transition: all 0.3s ease;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+      }
+
+      .social-links a:hover {
+        transform: scale(1.1);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+      }
+
+      .social-links img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
       }
 
       footer {
-        margin-top: 40px;
-        padding: 10px;
+        margin-top: 50px;
+        padding: 20px;
         background: rgba(0, 0, 0, 0.8);
-        font-size: 0.9em;
         color: #999;
+        font-size: 1em;
+      }
+
+      @keyframes fadeIn {
+        0% {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0);
+        }
       }
     </style>
   </head>
@@ -99,17 +145,40 @@
       <p>Biasa dipanggil: Yudis</p>
     </header>
     <section class="about">
+      <h2>About Me</h2>
       <img src="https://files.catbox.moe/k68d72.jpg" alt="Yudis" />
-      <div class="about-text">
-        <h2>Perkenalan</h2>
-        <p>Halo! Nama saya <strong>Riskiyan Benta Yudistira</strong>, biasa dipanggil <strong>Yudis</strong>.</p>
-        <p>Saya sangat menyukai teknologi, khususnya pengembangan website dan bot. Hobi saya adalah mendengarkan musik dan mengeksplorasi hal-hal baru yang menarik.</p>
-        <p>Jika Anda tertarik untuk berkolaborasi atau hanya ingin bertanya, jangan ragu untuk menghubungi saya lewat link berikut:</p>
-        <p>
-          <a href="https://wa.me/6282143985744" target="_blank">Hubungi saya di WhatsApp</a>
-        </p>
+      <p>
+        Halo, saya Riskiyan Benta Yudistira, biasa dipanggil Yudis. Saya sangat
+        menyukai teknologi, khususnya pengembangan website dan bot. Hobi saya adalah
+        mendengarkan musik dan mengeksplorasi hal-hal baru yang menarik. Saya juga suka
+        berbagi pengetahuan dan membuat hal-hal kreatif.
+      </p>
+      <div class="favorite-song">
+        <h3>Lagu Favorit Saya:</h3>
+        <p><strong>Hindia - Secukupnya</strong></p>
+        <audio controls>
+          <source
+            src="https://files.catbox.moe/2nco0t.m4a"
+            type="audio/mpeg"
+          />
+          Browser Anda tidak mendukung pemutar audio.
+        </audio>
       </div>
     </section>
+    <div class="social-links">
+      <a href="https://www.instagram.com/yudis_299/" target="_blank">
+        <img
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Instagram_logo_2022.svg/1200px-Instagram_logo_2022.svg.png"
+          alt="Instagram"
+        />
+      </a>
+      <a href="https://wa.me/6282143985744" target="_blank">
+        <img
+          src="https://img102.pixhost.to/images/113/557023643_tenrai-bot.jpg"
+          alt="WhatsApp"
+        />
+      </a>
+    </div>
     <footer>
       <p>© 2025 Riskiyan Benta Yudistira | Dibuat dengan hati.</p>
     </footer>
