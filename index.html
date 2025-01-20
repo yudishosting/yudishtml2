@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Profile with Music</title>
+    <title>Profil dengan Musik</title>
     <style>
       * {
         margin: 0;
@@ -20,6 +20,27 @@
         overflow-x: hidden;
       }
 
+      /* Efek Laser */
+      .laser-effect {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(to right, rgba(0,255,0,0.5), rgba(255,0,0,0.5));
+        animation: laserEffect 2s forwards;
+        z-index: 9999;
+      }
+
+      @keyframes laserEffect {
+        0% {
+          background: linear-gradient(to right, rgba(0,255,0,0.5), rgba(255,0,0,0.5));
+        }
+        100% {
+          background: transparent;
+        }
+      }
+
       .profile {
         margin: 50px auto;
         padding: 30px;
@@ -27,7 +48,8 @@
         background: rgba(255, 255, 255, 0.1);
         border-radius: 10px;
         box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-        animation: fadeIn 1s ease-out 1s forwards;
+        animation: fadeIn 1s ease-out;
+        opacity: 0;
       }
 
       .profile img {
@@ -100,14 +122,11 @@
       }
 
       footer {
-        position: fixed;
-        bottom: 0;
-        width: 100%;
+        margin-top: 50px;
         padding: 20px;
         background: rgba(0, 0, 0, 0.8);
         color: #999;
         font-size: 1em;
-        text-align: center;
       }
 
       @keyframes fadeIn {
@@ -120,49 +139,14 @@
           transform: translateY(0);
         }
       }
-
-      @keyframes laserEffect {
-        0% {
-          width: 0;
-          height: 0;
-          border-radius: 50%;
-          top: 50%;
-          left: 50%;
-        }
-        50% {
-          width: 150px;
-          height: 150px;
-          border-radius: 50%;
-          top: 30%;
-          left: 30%;
-        }
-        100% {
-          width: 0;
-          height: 0;
-          border-radius: 50%;
-          top: 50%;
-          left: 50%;
-        }
-      }
-
-      .laser {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        width: 0;
-        height: 0;
-        background: rgba(0, 204, 255, 0.8);
-        animation: laserEffect 2s ease-out forwards;
-      }
     </style>
   </head>
   <body>
-    <div class="laser"></div> <!-- Laser animation -->
-
+    <div class="laser-effect"></div> <!-- Efek laser -->
     <section class="profile">
       <img
         src="https://img102.pixhost.to/images/114/557025919_tenrai-bot.jpg"
-        alt="Profile"
+        alt="Profil"
       />
       <p>
         Halo, saya Riskiyan Benta Yudistira, biasa dipanggil Yudis. Saya sangat
@@ -201,5 +185,20 @@
     <footer>
       <p>© 2025 Riskiyan Benta Yudistira | Dibuat dengan hati.</p>
     </footer>
+
+    <script>
+      // Sembunyikan profil pada awalnya
+      document.querySelector('.profile').style.opacity = 0;
+
+      // Tunggu hingga efek laser selesai
+      setTimeout(function() {
+        // Tampakkan konten profil secara perlahan
+        document.querySelector('.profile').style.transition = 'opacity 1s';
+        document.querySelector('.profile').style.opacity = 1;
+
+        // Hapus efek laser
+        document.querySelector('.laser-effect').style.display = 'none';
+      }, 2000); // Waktu untuk efek laser
+    </script>
   </body>
 </html>
